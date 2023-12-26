@@ -6,5 +6,8 @@ height = gets.chomp
 
 ideal_weight = (height.to_i - 110)*1.15
 
-puts "#{name}, ваш вес: #{ideal_weight} кг."
-puts "Ваш вес уже оптимальный!" if ideal_weight < 0
+if ideal_weight < 0
+  puts "Ваш вес уже оптимальный!"
+else
+  puts "#{name}, ваш вес: #{ideal_weight} кг."
+end
