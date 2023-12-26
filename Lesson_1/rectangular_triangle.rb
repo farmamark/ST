@@ -1,11 +1,16 @@
-puts "Longest side ?"
-a = gets.chomp.to_i
+arr = []
+puts "First side ?"
+arr << a = gets.chomp.to_i
 puts "Second side ?"
-b = gets.chomp.to_i
+arr << b = gets.chomp.to_i
 puts "Third side ?"
-c = gets.chomp.to_i
+arr << c = gets.chomp.to_i
 
-  if b**2 + c**2 == a**2
+d = arr.sort.last
+e = arr.sort[0]
+t = arr.sort[1]
+
+  if e**2 + t**2 == d**2
      puts "Rigt triangle"
    elsif a == b && a == c
      puts "This triangle is equilateral and isosceles"
