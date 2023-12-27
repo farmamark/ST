@@ -1,16 +1,17 @@
-arr = []
 puts "First side ?"
-arr << a = gets.chomp.to_i
+a = gets.chomp.to_i
 puts "Second side ?"
-arr << b = gets.chomp.to_i
+b = gets.chomp.to_i
 puts "Third side ?"
-arr << c = gets.chomp.to_i
+c = gets.chomp.to_i
 
-d = arr.sort.last
-e = arr.sort[0]
-t = arr.sort[1]
+arr = [a, b, c]
+sorted_array = arr.sort
+hypotenuse = sorted_array[-1]
+first_leg = sorted_array[0]
+second_leg = sorted_array[1]
 
-  if e**2 + t**2 == d**2
+  if second_leg**2 + first_leg**2 == hypotenuse**2
      puts "Rigt triangle"
    elsif a == b && a == c
      puts "This triangle is equilateral and isosceles"
