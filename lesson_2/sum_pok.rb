@@ -14,7 +14,9 @@ end
 
 puts basket_shop
 
-basket_shop.each {|name, value| sum_basket += value[:price] * value[:quantity]}
-basket_shop.each {|name, value| puts "#{name} - #{value[:price] * value[:quantity]}"}
+basket_shop.each do|name, value|
+   sum_basket += value[:price] * value[:quantity]
+   puts "#{name}: #{value[:price] * value[:quantity]}"
+ end
 
 puts sum_basket
