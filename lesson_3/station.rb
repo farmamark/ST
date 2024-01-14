@@ -1,5 +1,6 @@
 class Station
   attr_accessor :trains
+  attr_reader :name
 
   def initialize(name)
     @name = name
@@ -8,10 +9,6 @@ class Station
 
   def arrival(train)
     trains<<train
-  end
-
-  def list_trains
-    station.trains
   end
 
   def departure(train)
