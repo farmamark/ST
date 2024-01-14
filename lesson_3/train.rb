@@ -42,7 +42,7 @@ class Train
     current_station += 1
   end
 
-  def go_prev_st
+  def go_previous_station
     current_station.departure
     previous_station.arrival
     current_station -= 1
