@@ -1,7 +1,7 @@
 class Train
-  attr_reader :number
 
-  attr_accessor :carriages, :speed, :routs, :current_index, :current_station, :next_station, :previous_station
+  attr_reader :number, :speed
+  attr_accessor :current_station, :next_station, :previous_station
 
   def initialize(number)
     @number = number
@@ -21,7 +21,7 @@ class Train
 
   def next_station
     if current_index == routs.stations.size - 1
-      return "last station"
+      return
     else
        next_station = routs.stations[(current_index + 1)]
     end
@@ -29,7 +29,7 @@ class Train
 
   def previous_station
     if current_index == 0
-      return "this is the first station"
+      return
     else
       previous_station = routs.stations[(current_index - 1)]
     end
@@ -62,4 +62,10 @@ class Train
   def unhook_carriage(carriage)
     carriages.delete(carriage)
   end
+
+  protected
+
+  attr_writer :speed, :carriages
+  attr_accessor :routs, :current_index
+
 end

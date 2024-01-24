@@ -4,6 +4,10 @@ class PassengerTrain < Train
     super if carriage.is_a?(PassengerCarriage)
   end
 
+  protected
+
+  attr_writer :speed, :carriages
+  attr_accessor :routs, :current_index
 end
 
 

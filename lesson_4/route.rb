@@ -1,6 +1,6 @@
 class Route
-  attr_accessor :stations
-  attr_reader :name
+
+  attr_reader :name, :stations
 
   def initialize(name, first_station, last_station)
     @name = name
@@ -14,4 +14,8 @@ class Route
   def delete(station)
     stations.delete(station)
   end
+
+  protected
+  attr_writer :stations
+
 end

@@ -1,9 +1,7 @@
-require_relative 'main'
+#require_relative 'main'
 
 class RailWays
   include Konfigable
-
-  attr_accessor :all_stations, :all_trains, :all_route, :all_carriages
 
   def initialize
     @all_stations = []
@@ -169,6 +167,7 @@ class RailWays
 
   protected # Эти методы на прямую не используются,
             # их вызывают другие методы класса.
+  attr_accessor :all_stations, :all_trains, :all_route, :all_carriages
 
   def show_all_trains
     all_trains.each_with_index {|x,i| puts "#{i} - #{x.number} - #{x.class}"}
