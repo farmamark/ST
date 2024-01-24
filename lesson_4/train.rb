@@ -1,6 +1,6 @@
 class Train
 
-  attr_reader :number, :speed
+  attr_reader :number, :carriages
   attr_accessor :current_station, :next_station, :previous_station
 
   def initialize(number)
@@ -56,16 +56,16 @@ class Train
   end
 
   def attach_carriage(carriage)
-    carriages<<carriage
+    self.carriages<<carriage
   end
 
   def unhook_carriage(carriage)
-    carriages.delete(carriage)
+    self.carriages.delete(carriage)
   end
 
   protected
 
-  attr_writer :speed, :carriages
-  attr_accessor :routs, :current_index
+  attr_writer :carriages
+  attr_accessor :routs, :current_index, :speed
 
 end
