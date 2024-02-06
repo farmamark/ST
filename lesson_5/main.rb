@@ -52,6 +52,7 @@ module Konfigable
   end
 end
 
+require_relative 'carriage'
 require_relative 'instance_counter'
 require_relative 'company'
 require_relative 'railways'

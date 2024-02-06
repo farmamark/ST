@@ -73,7 +73,7 @@ class Train
     self.carriages.delete(carriage)
   end
 
-  protected
+  private
 
   attr_writer :carriages
   attr_accessor :routs, :current_index, :speed

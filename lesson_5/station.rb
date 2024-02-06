@@ -23,6 +23,6 @@ class Station
     trains.delete(train)
   end
 
-  protected
+  private
   attr_writer :trains
 end

@@ -165,7 +165,7 @@ class RailWays
       puts "#{v} - #{x.name}"}
   end
 
-  protected # Эти методы на прямую не используются,
+  private # Эти методы на прямую не используются,
             # их вызывают другие методы класса.
   attr_accessor :all_stations, :all_trains, :all_route, :all_carriages
 

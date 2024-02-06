@@ -16,7 +16,7 @@ class Route
     stations.delete(station)
   end
 
-  protected
+  private
   attr_writer :stations
 
 end

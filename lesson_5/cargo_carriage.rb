@@ -1,8 +1,2 @@
-class CargoCarriage < Train
-
-  attr_reader :name
-
-  def initialize(name)
-    @name = name
-  end
+class CargoCarriage < Carriage
 end
