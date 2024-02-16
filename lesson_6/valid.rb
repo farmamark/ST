@@ -1,4 +1,4 @@
-module Validable
+module Validatable
   NAME_FORMAT = /\A[а-я|\w|\W]{3,}\z/i
   def valid?
     validate!
@@ -8,6 +8,6 @@ module Validable
   end
   private
   def validate!
-    raise "Имя должно быть не менее 3-х символов" if !NAME_FORMAT.match?(name)
+    raise NotImlementedError if !NAME_FORMAT.match?(name)
   end
 end

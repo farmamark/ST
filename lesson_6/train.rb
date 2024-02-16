@@ -1,6 +1,6 @@
 require_relative 'instance_counter'
 class Train
-  include Company, InstanceCounter, Validable
+  include Company, InstanceCounter, Validatable
   attr_reader :number, :carriages
   attr_accessor :current_station, :next_station, :previous_station
   FORMAT_NUMBER = /\A[а-я|\w]{3}-?[а-я\w]{2}\z/i

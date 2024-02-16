@@ -1,6 +1,6 @@
 class Route
   include InstanceCounter
-  include Validable
+  include Validatable
   attr_reader :name, :stations
 
   def initialize(name=nil, first_station, last_station)

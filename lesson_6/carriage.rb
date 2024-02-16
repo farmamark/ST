@@ -1,5 +1,5 @@
 class Carriage
-  include Validable
+  include Validatable
   attr_reader :name
 
   def initialize(name=nil)
