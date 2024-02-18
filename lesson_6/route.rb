@@ -20,4 +20,8 @@ class Route
 
   private
   attr_writer :stations
+
+  def validate!
+    raise "Имя должно быть не менее 3-х символов" if !NAME_FORMAT.match?(name)
+  end
 end

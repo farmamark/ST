@@ -8,6 +8,6 @@ module Validatable
   end
   private
   def validate!
-    raise NotImplementedError if !NAME_FORMAT.match?(name)
+    raise NotImplementedError
   end
 end

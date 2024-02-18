@@ -17,7 +17,7 @@ class RailWays
     station = Station.new(name)
     all_stations<<station
     puts "Новая станция: #{station.name} создана."
-  rescue NotImplementedError
+  rescue RuntimeError
     puts "Имя должно быть не менее 3-х символов"
     retry
   end
@@ -56,7 +56,7 @@ class RailWays
     route = Route.new(name, all_stations[first_station], all_stations[last_station])
     all_route<<route
     puts "Маршрут #{route.name} создан."
-  rescue NotImplementedError
+  rescue RuntimeError
     puts "Имя должно быть не менее 3-х символов"
     retry
   end
@@ -117,7 +117,7 @@ class RailWays
     else
       puts "Ошибка"
     end
-  rescue NotImplementedError
+  rescue RuntimeError
     puts "Имя должно быть не менее 3-х символов"
     retry
   end

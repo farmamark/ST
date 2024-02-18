@@ -28,4 +28,8 @@ class Station
 
   private
   attr_writer :trains
+
+  def validate!
+    raise "Имя должно быть не менее 3-х символов" if !NAME_FORMAT.match?(name)
+  end
 end
