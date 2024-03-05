@@ -25,8 +25,8 @@ class Station
     trains.delete(train)
   end
 
-  def methods_on_block(&block)
-    @trains.each {|train| yield(train)}
+  def each_trains(&block)
+    trains.each {|train| yield(train)}
   end
 
   private

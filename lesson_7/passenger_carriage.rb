@@ -7,10 +7,10 @@ class PassengerCarriage < Carriage
   end
 
   def take_the_place
-    @free_places -=1
+    self.free_places -= 1
   end
   def occupied_places
-    @number_of_seats - @free_places
+    number_of_seats - free_places
   end
 end
 

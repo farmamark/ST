@@ -67,15 +67,15 @@ class Train
   end
 
   def attach_carriage(carriage)
-    self.carriages<<carriage
+    self.carriages << carriage
   end
 
   def unhook_carriage(carriage)
     self.carriages.delete(carriage)
   end
 
-  def methods_on_block(&block)
-    @carriages.each {|carriage| yield(carriage)}
+  def each_carriages(&block)
+    carriages.each {|carriage| yield(carriage)}
   end
 
   private

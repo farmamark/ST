@@ -85,7 +85,7 @@ class RailWays
     show_all_routs
     puts "Введиет № маршрута в который хотите добавить станцию"
     num_route = gets.chomp.to_i
-    all_route[num_route].new_st(all_stations[num_stat])
+    all_route[num_route].insert_station(all_stations[num_stat])
     puts "Готово"
   end
 
@@ -173,7 +173,7 @@ class RailWays
     show_all_stations
     puts "Выбирите станцию"
     stat = gets.chomp.to_i
-    all_stations[stat].methods_on_block do |train|
+    all_stations[stat].each_trains do |train|
       puts "#{train.number} - #{train.class} - #{train.carriages.size}"
     end
   end
@@ -187,7 +187,7 @@ class RailWays
     puts "Выбирите поезд"
     show_all_trains
     train = gets.chomp.to_i
-    all_trains[train].methods_on_block do |c|
+    all_trains[train].each_carriages do |c|
       if c.is_a? (PassengerTrain)
         puts "#{c.name} - Пассажирский - #{c.free_places}/#{c.occupied_places}"
       else

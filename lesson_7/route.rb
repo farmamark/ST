@@ -10,7 +10,7 @@ class Route
     register_instance
   end
 
-  def new_st(station)
+  def insert_station(station)
     stations.insert(1, station)
   end
 
