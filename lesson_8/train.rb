@@ -6,7 +6,6 @@ class Train
   include InstanceCounter
   include Company
   attr_reader :number, :carriages
-  attr_accessor :current_station, :next_station, :previous_station
 
   FORMAT_NUMBER = /\A[а-я|\w]{3}-?[а-я\w]{2}\z/i.freeze
 
@@ -63,8 +62,8 @@ class Train
     self.speed = 0
   end
 
-  def move(q)
-    self.speed = q
+  def move(quant)
+    self.speed = quant
   end
 
   def attach_carriage(carriage)

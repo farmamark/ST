@@ -9,8 +9,8 @@ class CargoCarriage < Carriage
     @free_volume = @volume
   end
 
-  def fill_the_volume(n)
-    self.free_volume -= n
+  def fill_the_volume(num)
+    self.free_volume -= num
   end
 
   def occupied_volume
