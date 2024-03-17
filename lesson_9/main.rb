@@ -64,18 +64,20 @@ module Konfigable
   end
 end
 
-require_relative 'valid'
-require_relative 'carriage'
-require_relative 'instance_counter'
-require_relative 'company'
-require_relative 'railways'
-require_relative 'route'
-require_relative 'train'
-require_relative 'station'
-require_relative 'passenger_train'
-require_relative 'cargo_train'
-require_relative 'cargo_carriage'
-require_relative 'passenger_carriage'
 
-x = RailWays.new
-x.konfig
+require_relative 'railways'
+
+s = Station.new
+s.valid?
+
+s = Station.new "dd"
+s.valid?
+
+s = Station.new "ddd"
+s.valid?
+s.validate!
+
+s.baza=2
+s.baza_history
+s.baza=3
+s.baza_history

@@ -5,10 +5,12 @@ class Route
   include Validatable
   attr_reader :name, :stations
 
+  validate :name, :presence
+  validate :stations, :type, Station
+
   def initialize(name, first_station, last_station)
     @name = name
     @stations = [first_station, last_station]
-    validate!
     register_instance
   end
 
@@ -23,8 +25,4 @@ class Route
   private
 
   attr_writer :stations
-
-  def validate!
-    raise 'Имя должно быть не менее 3-х символов' unless NAME_FORMAT.match?(name)
-  end
 end

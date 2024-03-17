@@ -1,3 +1,16 @@
+require_relative 'accessors'
+require_relative 'valid'
+require_relative 'carriage'
+require_relative 'instance_counter'
+require_relative 'company'
+require_relative 'railways'
+require_relative 'station'
+require_relative 'route'
+require_relative 'train'
+require_relative 'passenger_train'
+require_relative 'cargo_train'
+require_relative 'cargo_carriage'
+require_relative 'passenger_carriage'
 # frozen_string_literal: true
 
 # require_relative 'main'

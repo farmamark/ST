@@ -3,6 +3,7 @@
 class Station
   include InstanceCounter
   include Validatable
+  extend Accessors
   attr_reader :name, :trains
 
   @@all = []
@@ -11,10 +12,15 @@ class Station
     @@all
   end
 
+  attr_accessor_with_history :baza
+
+  validate :name, :presence
+  validate :name, :format, NAME_FORMAT
+
+
   def initialize(name = nil)
     @name = name
     @trains = []
-    validate!
     @@all << self
     register_instance
   end
@@ -35,7 +41,4 @@ class Station
 
   attr_writer :trains
 
-  def validate!
-    raise 'Имя должно быть не менее 3-х символов' unless NAME_FORMAT.match?(name)
-  end
 end

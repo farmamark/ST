@@ -15,9 +15,12 @@ class Train
     @@all_trains[number]
   end
 
+  validate :number, :presence
+  validate :number, :format, FORMAT_NUMBER
+  validate :number, :type, String
+
   def initialize(number = nil)
     @number = number
-    validate!
     @carriages = []
     @speed = 0
     @@all_trains[@number] = self
@@ -83,8 +86,4 @@ class Train
   attr_writer :carriages
   attr_accessor :routs, :current_index, :speed
 
-  def validate!
-    raise 'надо указать номер' if number.nil?
-    raise 'Формат номер долежн быть ххх-хх или ххххх' unless FORMAT_NUMBER.match?(number)
-  end
 end
